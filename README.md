@@ -66,6 +66,7 @@ After executing this SWIDS.py, we launch various MC-MitM attack variants.
 ## Sample GUIs-Proof of concept
 ### Front panel of an ADS node
 <p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/GUI1-new-updated.png"></p>
+
 ### Log file view of an ADS node
 <p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/GUI2-new-updated.png"></p>
 
