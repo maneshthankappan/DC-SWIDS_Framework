@@ -1,5 +1,4 @@
 # DC-SWIDS_Framework
-Distributed and Cooperative Signature Based WIDS to detect MC-MitM attacks 
 This repository is a part of our research work entitled 
   <p align="center"> <img src="https://github.com/maneshthankappan/MC-MitM-Attack-Dataset/blob/main/Labels/title.png"></p>
 and describes how to detect MC-MitM attack signatures. This code provides how an ADS node (Raspberri Pi) of our DC-SWIDS framework works  Kindly refer to our above research paper for more details of MC-MitM attacks and their variants.
