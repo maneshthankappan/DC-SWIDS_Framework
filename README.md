@@ -1,7 +1,7 @@
 # DC-SWIDS_Framework
 This repository is a part of our research work entitled 
   <p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/title.png"></p>
-and describes how to detect MC-MitM attack signatures. This code provides how an ADS node (Raspberri Pi) of our DC-SWIDS framework works  Kindly refer to our above research paper for more details of MC-MitM attacks and their variants.
+and describes how to detect MC-MitM attack signatures. This project provides how an ADS node (Raspberri Pi) of our DC-SWIDS framework works. Kindly refer to our above research paper for more details of MC-MitM attacks and their variants.
 
 ## Prerequisite-Install Scapy
 To install Scapy on Raspberry Pi , you can follow these steps:
@@ -46,8 +46,8 @@ The following script prompts the user to  the SSID of the target access point (A
 
 Make sure you have the "mc-mitm-detection-asyncsniffer_centralized.py" script in the same directory, or provide the full path to the script if it's located elsewhere. This script will pass the selected Wi-Fi card, Wi-Fi frequency, and SSID as command-line arguments to the "mc-mitm-detection-asyncsniffer_centralized.py" script, which will handle the further processing.
 * ##### macaddresses.json:
-This file is utilized by the "SWIDS.py" script to retrieve the vendor details of connected clients by using their MAC addresses.
-* ##### mc-mitm-detection-asyncsniffer_centralized.py: 
+This file is utilized by the "DC-SWIDS_script.py" to retrieve the vendor details of connected clients by using their MAC addresses.
+* ##### DC-SWIDS_script.py: 
 This script combines various detection logic discussed in Section 5 of our paper with the algorithms presented in Appendix 1. Its main purpose is to identify the presence of MC-MitM attacks by verifying the status of stage 1 and stage 2 attacks based on attack signatures. For more detailed information, please refer to Section 3 of our paper.
 
 The script is designed to be executed with a probe interval of 60 seconds. After the first probe interval, the same script will be executed in another thread with a delay of 10 seconds. This approach ensures continuous monitoring, allowing the SWIDS to make attack decisions every 10 seconds after the initial probe interval.
@@ -63,6 +63,9 @@ After executing this SWIDS.py, we launch various MC-MitM attack variants.
 * [Click here how to launch MC-MitM improved variant](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Improved-Variant)
 
 
-### Sample output snippet
-We provide a sample output snippet from the logfile of our SWIDS
+## Sample GUIs-Proof of concept
+### Front panel of an ADS node
+<p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/GUI1-new-updated.png"></p>
+### Log file view of an ADS node
+<p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/GUI2-new-updated.png"></p>
 
