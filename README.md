@@ -1,7 +1,7 @@
 # DC-SWIDS_Framework
 This repository is a part of our research work entitled  
   <p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/title.png"></p>
-and describes how to detect MC-MitM attacks using their signatures in a protected Wi-Fi network. This project provides how an ADS node (Raspberri Pi) of our DC-SWIDS framework works. Kindly refer to our above research paper for more details of MC-MitM attacks and their variants.
+and describes how to detect MC-MitM attacks using their signatures in a protected Wi-Fi network. This project provides how an ADS node (Raspberri Pi) of our DC-SWIDS framework works. 
 
 ## Prerequisite-Install Scapy
 To install Scapy on Raspberry Pi , you can follow these steps:
@@ -51,9 +51,9 @@ This file is utilized by the "DC-SWIDS_script.py" to retrieve the vendor details
 
 In the terminal, write  
 ```bash
-sudo python3 "DC-SWIDS_script.py
+sudo python3 DC-SWIDS_script.py
 ```
-After executing this SWIDS.py, we launch various MC-MitM attack variants. 
+After executing this DC-SWIDS_script.py, we launch various MC-MitM attack variants. 
 * [Click here how to launch MC-MitM base variant](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-) 
 * [Click here how to launch MC-MitM improved variant](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Improved-Variant)
 
@@ -65,6 +65,13 @@ After executing this SWIDS.py, we launch various MC-MitM attack variants.
 ### Log file view of an ADS node
 <p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/GUI2-new-updated.png"></p>
 
-## Future Works
+## References
+  * https://github.com/vanhoefm/mc-mitm
+  * https://github.com/vanhoefm/modwifi
+  * https://github.com/lucascouto/mitm-channel-based-package
+  * https://www.krackattacks.com/
+  * https://www.fragattacks.com/#tools
+  * https://papers.mathyvanhoef.com/acsac2014.pdf
+  * https://papers.mathyvanhoef.com/ccs2018.pdf
 
 
