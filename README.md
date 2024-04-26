@@ -1,7 +1,7 @@
 # DC-SWIDS_Framework
 This repository is a part of our research work entitled  
   <p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/title.png"></p>
-and describes how to detect MC-MitM attack signatures. This project provides how an ADS node (Raspberri Pi) of our DC-SWIDS framework works. Kindly refer to our above research paper for more details of MC-MitM attacks and their variants.
+and describes how to detect MC-MitM attacks using their signatures in a protected Wi-Fi network. This project provides how an ADS node (Raspberri Pi) of our DC-SWIDS framework works. Kindly refer to our above research paper for more details of MC-MitM attacks and their variants.
 
 ## Prerequisite-Install Scapy
 To install Scapy on Raspberry Pi , you can follow these steps:
@@ -39,24 +39,19 @@ Attach any two commercially available Wi-Fi adapters. One is used to monitor tag
 
 ## Quick Start
 
-From this repository, download all the 3 files (SWIDS.py,mc-mitm-detection-asyncsniffer_centralized.py, and macaddresses.json) and keep all of them in a same folder. Alternatively you can download SWIDS.tar.gz. 
+From this repository, download all the 3 files (DC-SWIDS_script.py and macaddresses.json) and keep all of them in a same folder. 
 ### Description of Python Scripts
-* ##### DC-SWIDS_Framework.py: 
-The following script prompts the user to  the SSID of the target access point (AP) in the Wi-Fi network. It then automatically identifies all clients connected to the AP and forwards their MAC addresses. 
-
-Make sure you have the "mc-mitm-detection-asyncsniffer_centralized.py" script in the same directory, or provide the full path to the script if it's located elsewhere. This script will pass the selected Wi-Fi card, Wi-Fi frequency, and SSID as command-line arguments to the "mc-mitm-detection-asyncsniffer_centralized.py" script, which will handle the further processing.
-* ##### macaddresses.json:
-This file is utilized by the "DC-SWIDS_script.py" to retrieve the vendor details of connected clients by using their MAC addresses.
 * ##### DC-SWIDS_script.py: 
-This script combines various detection logic discussed in Section 5 of our paper with the algorithms presented in Appendix 1. Its main purpose is to identify the presence of MC-MitM attacks by verifying the status of stage 1 and stage 2 attacks based on attack signatures. For more detailed information, please refer to Section 3 of our paper.
-
-The script is designed to be executed with a probe interval of 60 seconds. After the first probe interval, the same script will be executed in another thread with a delay of 10 seconds. This approach ensures continuous monitoring, allowing the SWIDS to make attack decisions every 10 seconds after the initial probe interval.
+The following script prompts the user to  the SSID of the target access point (AP) in the Wi-Fi network. It then automatically identifies all clients connected to the AP and forwards their MAC addresses for monitoring module. Its main purpose is to identify the presence of MC-MitM attacks by verifying the status of stage 1 and stage 2 attacks based on attack signatures. Various MC-MitM attack signatures created are avialable in [MC-MitM-Attack-Dataset](https://github.com/maneshthankappan/MC-MitM-Attack-Dataset) "DC-SWIDS_script.py" implements the detection logic described in section 5 of our previous paper titled [A Signature-Based Wireless Intrusion Detection System Framework for Multi-Channel Man-in-the-Middle Attacks Against Protected Wi-Fi Networks](https://ieeexplore.ieee.org/abstract/document/10423016)  As such, this script is designed to be executed with a probe interval of 60 seconds. After the first probe interval, the same script will be executed in another thread with a delay of 10 seconds. This approach ensures continuous monitoring, allowing the an ADS node of DC-SWIDS framework to make attack decisions every 10 seconds after the initial probe interval. 
+Furthermore, this script automatically select Wi-Fi cards and put them in monitor mode for passively monitoring the operating channel and if any oher unauthorized or rogue channels found. 
+* ##### macaddresses.json:    
+This file is utilized by the "DC-SWIDS_script.py" to retrieve the vendor details of connected clients by using their MAC addresses.
 
 ## How to run the SWIDS
 
 In the terminal, write  
 ```bash
-sudo python3 SWIDS.py
+sudo python3 "DC-SWIDS_script.py
 ```
 After executing this SWIDS.py, we launch various MC-MitM attack variants. 
 * [Click here how to launch MC-MitM base variant](https://github.com/maneshthankappan/Multi-Channel-Man-in-the-Middle-Attacks-Against-Protected-Wi-Fi-Networks-By-Base-Variant-) 
@@ -69,4 +64,7 @@ After executing this SWIDS.py, we launch various MC-MitM attack variants.
 
 ### Log file view of an ADS node
 <p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/GUI2-new-updated.png"></p>
+
+## Future Works
+
 
