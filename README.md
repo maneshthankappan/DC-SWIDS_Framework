@@ -1,5 +1,5 @@
 # DC-SWIDS_Framework
-This repository is a part of our research work entitled 
+This repository is a part of our research work entitled  
   <p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/title.png"></p>
 and describes how to detect MC-MitM attack signatures. This project provides how an ADS node (Raspberri Pi) of our DC-SWIDS framework works. Kindly refer to our above research paper for more details of MC-MitM attacks and their variants.
 
