@@ -27,7 +27,7 @@ This should start the Scapy interactive shell if the installation was successful
 
 ## Prerequisite-Attach Wi-Fi adapters
 
-###Our primary considerations in Wi-Fi adapter selection were twofold
+### Our primary considerations in Wi-Fi adapter selection were twofold
 
 * Cost-Effectiveness and Commercial Availability: We aimed to choose Wi-Fi adapters that are affordable and readily accessible in the market.
 * Support for Monitor Mode in Linux Distributions: We required adapters that could reliably operate in monitor mode across various Linux distributions.
@@ -44,8 +44,6 @@ From this repository, download all the 3 files (DC-SWIDS_script.py and macaddres
 * ##### DC-SWIDS_script.py: 
 The following script prompts the user to  the SSID of the target access point (AP) in the Wi-Fi network. It then automatically identifies all clients connected to the AP and forwards their MAC addresses for monitoring module. Its main purpose is to identify the presence of MC-MitM attacks by verifying the status of stage 1 and stage 2 attacks based on attack signatures. Various MC-MitM attack signatures created are avialable in [MC-MitM-Attack-Dataset](https://github.com/maneshthankappan/MC-MitM-Attack-Dataset) "DC-SWIDS_script.py" implements the detection logic described in section 5 of our previous paper titled [A Signature-Based Wireless Intrusion Detection System Framework for Multi-Channel Man-in-the-Middle Attacks Against Protected Wi-Fi Networks](https://ieeexplore.ieee.org/abstract/document/10423016)  As such, this script is designed to be executed with a probe interval of 60 seconds. After the first probe interval, the same script will be executed in another thread with a delay of 10 seconds. This approach ensures continuous monitoring, allowing the an ADS node of DC-SWIDS framework to make attack decisions every 10 seconds after the initial probe interval. 
 Furthermore, this script automatically select Wi-Fi cards and put them in monitor mode for passively monitoring the operating channel and if any oher unauthorized or rogue channels found. 
-* ##### macaddresses.json:    
-This file is utilized by the "DC-SWIDS_script.py" to retrieve the vendor details of connected clients by using their MAC addresses.
 ### Important Functions/varialbles and Libraries used
 * **Library Imports**:Libraries for GUI creation (PyQt5), thread handling (QThread, pyqtSignal, QObject), datetime operations, network packet handling (scapy), MQTT communication, and system operations are imported.
 * **Initialization of Global Variables**:Various global variables like interfaces (iface1, iface2), network identifiers (bssid, essid, channel), timing settings (probe_interval, launch_interval), and lists (mac_list) are initialized.
@@ -57,6 +55,9 @@ ClientScanner: A class to scan for clients on the network by sniffing packets an
 GUI Class (Window):Defines the main window for the application using PyQt5. It includes functionality to start network scanning, switch between different GUI screens, and display network clients and logs.
 * **Execution and Event Handling**:Functions to search for clients by modifying the network interface to monitor mode, handle application closing, and retrieve vendor information based on MAC addresses are defined.At the end of the script, the GUI application is initialized and executed, which sets up the main window and enters the application event loop.
 * **Detection Threads**:These threads monitor for specific types of network traffic and analyze it for potential malicious activities, such as jamming attacks and rogue access points, by sniffing and analyzing packets.
+
+* ##### macaddresses.json:    
+This file is utilized by the "DC-SWIDS_script.py" to retrieve the vendor details of connected clients by using their MAC addresses
 
 ## How to run the SWIDS
 
