@@ -47,16 +47,16 @@ Furthermore, this script automatically select Wi-Fi cards and put them in monito
 * ##### macaddresses.json:    
 This file is utilized by the "DC-SWIDS_script.py" to retrieve the vendor details of connected clients by using their MAC addresses.
 ### Important Functions/varialbles and Libraries used
-***Library Imports**:Libraries for GUI creation (PyQt5), thread handling (QThread, pyqtSignal, QObject), datetime operations, network packet handling (scapy), MQTT communication, and system operations are imported.
-***Initialization of Global Variables**:Various global variables like interfaces (iface1, iface2), network identifiers (bssid, essid, channel), timing settings (probe_interval, launch_interval), and lists (mac_list) are initialized.
-***MQTT Setup**:An MQTT client is configured to connect to a broker and subscribe to topics related to different types of network attacks.
+* **Library Imports**:Libraries for GUI creation (PyQt5), thread handling (QThread, pyqtSignal, QObject), datetime operations, network packet handling (scapy), MQTT communication, and system operations are imported.
+* **Initialization of Global Variables**:Various global variables like interfaces (iface1, iface2), network identifiers (bssid, essid, channel), timing settings (probe_interval, launch_interval), and lists (mac_list) are initialized.
+* **MQTT Setup**:An MQTT client is configured to connect to a broker and subscribe to topics related to different types of network attacks.
 File Handling:An output file is opened to log results from the detection processes.
-***Classes for Network Monitoring**:BssidChannelHopper and EssidChannelHopper: These classes extend QThread and are used to change the channel on the network interface to hop through different frequencies either based on BSSID or ESSID.
+* **Classes for Network Monitoring**:BssidChannelHopper and EssidChannelHopper: These classes extend QThread and are used to change the channel on the network interface to hop through different frequencies either based on BSSID or ESSID.
 ClientScanner: A class to scan for clients on the network by sniffing packets and identifying unique MAC addresses.
-***IdsThread**: Extends QThread and QObject to handle different types of sniffing for malicious activities, and communicating findings via MQTT.
+* **IdsThread**: Extends QThread and QObject to handle different types of sniffing for malicious activities, and communicating findings via MQTT.
 GUI Class (Window):Defines the main window for the application using PyQt5. It includes functionality to start network scanning, switch between different GUI screens, and display network clients and logs.
-***Execution and Event Handling**:Functions to search for clients by modifying the network interface to monitor mode, handle application closing, and retrieve vendor information based on MAC addresses are defined.At the end of the script, the GUI application is initialized and executed, which sets up the main window and enters the application event loop.
-*Intrusion Detection Threads:These threads monitor for specific types of network traffic and analyze it for potential malicious activities, such as jamming attacks and rogue access points, by sniffing and analyzing packets.
+* **Execution and Event Handling**:Functions to search for clients by modifying the network interface to monitor mode, handle application closing, and retrieve vendor information based on MAC addresses are defined.At the end of the script, the GUI application is initialized and executed, which sets up the main window and enters the application event loop.
+* **Detection Threads**:These threads monitor for specific types of network traffic and analyze it for potential malicious activities, such as jamming attacks and rogue access points, by sniffing and analyzing packets.
 
 ## How to run the SWIDS
 
