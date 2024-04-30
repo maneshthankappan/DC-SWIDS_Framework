@@ -1,3 +1,4 @@
+# Import necessary modules for the application including networking, system operations, GUI elements, and MQTT communication.
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QThread, pyqtSignal, QObject
 from datetime import datetime, timedelta, date
@@ -21,30 +22,31 @@ import sys
 import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
 from scapy.layers.dot11 import Dot11Beacon, Dot11ProbeResp, Dot11Elt
-
+# Declare global variables for network interfaces, timing, and MQTT client setup.
 iface1 = "wlan1"
 iface2 = "wlan2"
 bssid = ""
 essid = ""
 freq = ""
 channel = ""
-broad_mac = "ff:ff:ff:ff:ff:ff"
-probe_interval = 60
-launch_interval = 10
-packet_num = 1000
-mac_list = []
-r_flag = True
+broad_mac = "ff:ff:ff:ff:ff:ff"   # Broadcast MAC address for wide network capture
+probe_interval = 60  # Interval for scanning
+launch_interval = 10 # Interval between launching new threads
+packet_num = 1000 # Number of packets to capture in sniffing
+mac_list = [] # List to store detected MAC addresses
+r_flag = True   # Running flag to control thread execution
 start = time()
 start_datetime = datetime.datetime.now()
 duration = 120
 max_time = 60  # 60 secs   for managing co-operative module through MQTT
 start_time = time()  # remember when we started
 mac_json = "macaddresses.json"
-output_file = open("logfile.txt", "a")
+output_file = open("logfile.txt", "a")  # Open a log file for appending data
 mqttBroker = "broker.emqx.io"
-client = mqtt.Client("ADS Node")
-client.connect(mqttBroker)
+client = mqtt.Client("ADS Node")  # Initialize MQTT client
+client.connect(mqttBroker) # Connect to the MQTT broker
 
+# Subscribe to various MQTT topics for different types of network attacks.
 client.subscribe("const_jam_attack_mqtt")
 client.subscribe("react_jam_attack_mqtt")
 client.subscribe("csa_attack_mqtt")
@@ -52,9 +54,10 @@ client.subscribe("con_beacon_probe_mqtt")
 client.subscribe("con_connection_est_mqtt")
 client.subscribe("con_data_mqtt")
 
-file_obj = open(output_file, "a+")
+file_obj = open(output_file, "a+") # Open or create another log file
 
 
+# Class to handle channel hopping on the BSSID level for both 2.4 GHz and 5 GHz frequencies.
 class BssidChannelHopper(QThread):
     def __init__(self):
         QThread.__init__(self)
@@ -78,7 +81,7 @@ class BssidChannelHopper(QThread):
                 if bssid != "":
                     break
 
-
+# Class for hopping channels based on ESSID. Similar to BSSID hopping but uses a different utility and checks for ESSID changes.
 class EssidChannelHopper(QThread):
     def __init__(self):
         QThread.__init__(self)
