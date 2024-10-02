@@ -78,7 +78,7 @@ After executing this DC-SWIDS_script.py, we launch various MC-MitM attack varian
 <p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/GUI2-new-updated.png"></p>
 
 ### An ADS node in the DC-SWIDS framework with support for 2.4 GHz
-<p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/GUI2-new-updated.png"></p>
+<p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/ADS-2.4GHZ%20(1).png"></p>
 
 ### An ADS node in the DC-SWIDS framework with support for 5 GHz
 <p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/GUI2-new-updated.png"></p>
