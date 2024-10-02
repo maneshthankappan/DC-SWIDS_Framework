@@ -77,6 +77,13 @@ After executing this DC-SWIDS_script.py, we launch various MC-MitM attack varian
 ### Log file view of an ADS node
 <p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/GUI2-new-updated.png"></p>
 
+### An ADS node in the DC-SWIDS framework with support for 2.4 GHz
+<p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/GUI2-new-updated.png"></p>
+
+### An ADS node in the DC-SWIDS framework with support for 5 GHz
+<p align="center"> <img src="https://github.com/maneshthankappan/DC-SWIDS_Framework/blob/main/GUI2-new-updated.png"></p>
+
+
 ## References
   * https://github.com/vanhoefm/mc-mitm
   * https://github.com/vanhoefm/modwifi
